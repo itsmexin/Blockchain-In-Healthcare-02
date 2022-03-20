@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body, html {
+					height: 100%;
+					max-width:100%;
+					margin:0;
+					overflow-x:hidden;
+					background-color:#090c1b;
+					font-family: "Kanit"!important;
+				}
+				/* header */
+			.title_box{
+				position:absolute;
+				font-family:Copperplate, fantasy;
+				font-weight:bold;
+				font-size:xx-large;
+				color:#ffa200;
+				border:5px solid #ffa200;
+				width:22%;
+				top:20px;
+				left:50px;
+			}
+			.header {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 88px;
+				z-index: 10;
+				-webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+				-moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+				box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+				background: #090c1b;
+				display:flex;
+				width:100vw;
+				box-sizing:border-box;
+				flex-direction: row;
+				flex-nowrap:nowrap;
+			}
+			.header__content-text {
+				text-align: center;
+				padding: 15px 20px;
+			}
+			.tabs{
+				text-align:right;
+				margin-right:50px;
+			}
+			.txt{
+				position: relative;
+				padding:10px;
+				text-decoration:none;
+				font-family: Copperplate, fantasy;
+				font-size:30px;
+				font-weight:700;
+				color:#ffa409;
+				left:1200px;
+			}
+			.spacing{
+        margin-top:10%;
+      }
+
+			.outerbox{
+				box-shadow: rgb(100 100 100 / 45%) 0px 0px 12px 6px;
+				padding:5px 20px 5px 20px;
+				border-radius:1.25rem;
+				margin: 20px 200px 0px 200px;
+        background-color: rgba(255,255,255,0.13);
+				border: 2px solid rgba(255,255,255,0.1);
+
+			}
+			.title{
+				color: #ffffff;
+				text-align: center;
+				font-size:30px;
+				font-weight:700;
+				letter-spacing: 1px;
+			}
+			form *{
+			    font-family: 'Poppins',sans-serif;
+			    color: #ffffff;
+			    letter-spacing: 0.5px;
+			    outline: none;
+			    border: none;
+			}
+
+			.wording_title{
+			    display: block;
+			    margin-top: 30px;
+					padding-left:55px;
+			    font-size: 16px;
+			    font-weight: 500;
+			}
+			.wording_textbox{
+			    display: block;
+			    height: 50px;
+			    width: 30%;
+			    background-color: rgba(255,255,255,0.07);
+			    border-radius: 3px;
+			    padding: 0 10px;
+			    margin-top: 8px;
+					margin-left:50px;
+			    font-size: 14px;
+			    font-weight: 300;
+					font-family: 'Poppins',sans-serif;
+			    color: #ffffff;
+			    letter-spacing: 0.5px;
+			    outline: none;
+			    border: none;
+			}
+			.wording_secretques{
+			    display: block;
+					transform: translate(650px,-433px);
+			    margin-top: 30px;
+			    font-size: 16px;
+			    font-weight: 500;
+			}
+			.wording_secretans{
+			    display: block;
+					transform: translate(650px,-400px);
+			    margin-top: 30px;
+			    font-size: 16px;
+			    font-weight: 500;
+			}
+			.wording_textboxs{
+			    display: block;
+					transform: translate(650px,-383px);
+			    height: 50px;
+			    width: 30%;
+			    background-color: rgba(255,255,255,0.07);
+			    border-radius: 3px;
+			    padding: 0 10px;
+			    margin-top: 8px;
+			    font-size: 14px;
+			    font-weight: 300;
+					font-family: 'Poppins',sans-serif;
+			    color: #ffffff;
+			    letter-spacing: 0.5px;
+			    outline: none;
+			    border: none;
+			}
+			::placeholder{
+			    color: #e5e5e5;
+					opacity: 0.4;
+			}
+			select {
+
+			  /* styling */
+			  background-color: white;
+				transform: translate(650px,-421px);
+				color:black;
+			  border: thin solid blue;
+			  border-radius: 4px;
+			  display: inline-block;
+			  font: inherit;
+			  line-height: 1.5em;
+			  padding: 0.5em 3.5em 0.5em 1em;
+
+			  /* reset */
+
+			  margin: 0;
+			  -webkit-box-sizing: border-box;
+			  -moz-box-sizing: border-box;
+			  box-sizing: border-box;
+			  -webkit-appearance: none;
+			  -moz-appearance: none;
+			}
+
+
+			/* arrows */
+
+			select.classic {
+			  background-image:
+			    linear-gradient(45deg, transparent 50%, blue 50%),
+			    linear-gradient(135deg, blue 50%, transparent 50%),
+			    linear-gradient(to right, skyblue, skyblue);
+			  background-position:
+			    calc(100% - 20px) calc(1em + 2px),
+			    calc(100% - 15px) calc(1em + 2px),
+			    100% 0;
+			  background-size:
+			    5px 5px,
+			    5px 5px,
+			    2.5em 2.5em;
+			  background-repeat: no-repeat;
+			}
+
+			select.classic:focus {
+			  background-image:
+			    linear-gradient(45deg, white 50%, transparent 50%),
+			    linear-gradient(135deg, transparent 50%, white 50%),
+			    linear-gradient(to right, gray, gray);
+			  background-position:
+			    calc(100% - 15px) 1em,
+			    calc(100% - 20px) 1em,
+			    100% 0;
+			  background-size:
+			    5px 5px,
+			    5px 5px,
+			    2.5em 2.5em;
+			  background-repeat: no-repeat;
+			  border-color: grey;
+			  outline: 0;
+			}
+			option{
+				color:black;
+			}
+
+			.btn {
+				transform:translate(200px,-200px);
+			  box-sizing: border-box;
+			  -webkit-appearance: none;
+			     -moz-appearance: none;
+			          appearance: none;
+			  background-color: transparent;
+			  border: 2px solid #FFC229;
+			  border-radius: 0.6em;
+			  color: #FFC229;
+			  cursor: pointer;
+			  display: -webkit-box;
+			  display: -webkit-flex;
+			  display: -ms-flexbox;
+			  display: flex;
+			  -webkit-align-self: center;
+			      -ms-flex-item-align: center;
+			          align-self: center;
+			  font-size: 1rem;
+			  font-weight: 400;
+			  line-height: 1;
+			  margin: 20px;
+			  padding: 1.2em 2.8em;
+			  text-decoration: none;
+			  text-align: center;
+			  text-transform: uppercase;
+			  font-family: 'Montserrat', sans-serif;
+			  font-weight: 700;
+			}
+			.btn:hover, .btn:focus {
+			  color: #fff;
+			  outline: 0;
+			}
+			.btn1 {
+				transform:translate(930px,-280px);
+				box-sizing: border-box;
+				-webkit-appearance: none;
+					 -moz-appearance: none;
+								appearance: none;
+				background-color: transparent;
+				border: 2px solid #e74c3c;
+				border-radius: 0.6em;
+				color: #e74c3c;
+				cursor: pointer;
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-align-self: center;
+						-ms-flex-item-align: center;
+								align-self: center;
+				font-size: 1rem;
+				font-weight: 400;
+				line-height: 1;
+				margin: 20px;
+				padding: 1.2em 2.8em;
+				text-decoration: none;
+				text-align: center;
+				text-transform: uppercase;
+				font-family: 'Montserrat', sans-serif;
+				font-weight: 700;
+			}
+			.btn1:hover, .btn:focus {
+				color: #fff;
+				outline: 0;
+			}
+			.fifth {
+			  border-color: #FFC229;
+			  border-radius: 0;
+			  color: #FFC229;
+			  position: relative;
+			  overflow: hidden;
+			  z-index: 1;
+			  -webkit-transition: color 150ms ease-in-out;
+			  transition: color 150ms ease-in-out;
+			}
+			.fifth:after {
+			  content: '';
+			  position: absolute;
+			  display: block;
+			  top: 0;
+			  left: 50%;
+			  -webkit-transform: translateX(-50%);
+			          transform: translateX(-50%);
+			  width: 0;
+			  height: 100%;
+			  background: #8e44ad;
+			  z-index: -1;
+			  -webkit-transition: width 150ms ease-in-out;
+			  transition: width 150ms ease-in-out;
+			}
+			.fifth:hover {
+			  color: #fff;
+			}
+			.fifth:hover:after {
+			  width: 110%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header">
+			<h1 class="header__content-text">
+				<div class="title_box"><span>GREEN EARTH CLINIC</span></div>
+					<div class="tabs">
+						<a class="txt" href="/">LOGOUT</a>
+				</div>
+			</h1>
+		</div>
+		<div class=spacing></div>
+
+		<p class="title">REGISTER PATIENT</p>
+		<form action="newblockstore/" method="GET">
+
+			{% csrf_token %}
+			<div class="outerbox">
+				<label class="wording_title" for="name">Name : </label><br>
+				<input class="wording_textbox" type="text" name="name" placeholder="name"></input><br>
+
+				<label class="wording_title"for="age">Age : </label><br>
+				<input class="wording_textbox" type="text" name="age" placeholder="age"></input><br>
+
+				<label class="wording_title" for="IC">IC (without "-") : </label><br>
+				<input class="wording_textbox" type="text" name="IC" placeholder="IC"></input><br>
+			</div>
+			<label class="wording_secretques" for="secret">Secret Question :</label><br>
+			<select name="secret" id="secret" class="classic">
+				<option value="What is your dog's name?">What is your dog's name?</option>
+				<option value="What is your favourite person name?">What is your favourite person name?</option>
+				<option value="Where did you go on your first date?">Where did you go on your first date?</option>
+			</select>
+
+			<label class="wording_secretans" for="secretans">Secret Answer : </label>
+			<input class="wording_textboxs" type="text" name="secretans" placeholder="secret answer"></input>
+
+			<input class="btn fifth" type="button" value="Back" onclick="history.back()"></input>
+			<input class="btn1 fifth" type=submit value="Register" ></input>
+
+			<input type="hidden" name="username" value={{username}}>
+			<input type="hidden" name="userpass" value={{userpass}}>
+		</form>
+	</body>
+</html>

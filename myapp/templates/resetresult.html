@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body, html {
+					height: 100%;
+					max-width:100%;
+					margin:0;
+					overflow-x:hidden;
+					background-color:#090c1b;
+					font-family: "Kanit"!important;
+				}
+				/* header */
+			.title_box{
+				position:absolute;
+				font-family:Copperplate, fantasy;
+				font-weight:bold;
+				font-size:xx-large;
+				color:#ffa200;
+				border:5px solid #ffa200;
+				width:22%;
+				top:20px;
+				left:50px;
+			}
+			.header {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 88px;
+				z-index: 10;
+				-webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+				-moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+				box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+				background: #090c1b;
+				display:flex;
+				width:100vw;
+				box-sizing:border-box;
+				flex-direction: row;
+				flex-nowrap:nowrap;
+			}
+			.header__content-text {
+				text-align: center;
+				padding: 15px 20px;
+			}
+			.tabs{
+				text-align:right;
+				margin-right:50px;
+			}
+			.txt{
+				position: relative;
+				padding:10px;
+				text-decoration:none;
+				font-family: Copperplate, fantasy;
+				font-size:30px;
+				font-weight:700;
+				color:#ffa409;
+				left:1200px;
+			}
+			.spacing{
+				margin-top:10%;
+			}
+
+			.outerbox{
+				box-shadow: rgb(100 100 100 / 45%) 0px 0px 12px 6px;
+				padding:5px 20px 5px 20px;
+				border-radius:1.25rem;
+				margin: 20px 300px 20px 300px;
+				background-color: rgba(255,255,255,0.13);
+				border: 2px solid rgba(255,255,255,0.1);
+
+			}
+			.title{
+				color: #ffffff;
+				text-align: center;
+				font-size:30px;
+				font-weight:700;
+				letter-spacing: 1px;
+			}
+
+
+			.wording_title1{
+					color: #ffffff;
+					display: block;
+					white-space: nowrap;
+					margin-top: 30px;
+					margin-left:0px;
+					font-size: 16px;
+					font-weight: 500;
+					/* transform: translate(0px,40px); */
+			}
+			.wording_textbox{
+					display: inline;
+					/* transform: translate(220px,0px); */
+					width: 300px;
+					height: 300px;
+					padding: 10px;
+					background-color: rgba(255,255,255,0.07);
+					/* background-size: 100px 0px; */
+					border-radius: 3px;
+					/* padding:  20px 10px; */
+					margin-top: 30px;
+					margin-left:100px;
+					font-size: 14px;
+					font-weight: 300;
+					font-family: 'Poppins',sans-serif;
+					color: #ffffff;
+					letter-spacing: 0.5px;
+					outline: none;
+					border: none;
+					text-align:center;
+
+			}
+			::placeholder{
+					color: #e5e5e5;
+					opacity: 0.4;
+					font-style: italic;
+					font-family: times new roman;
+			}
+			/* span{
+				opacity:0;
+			} */
+			.hidden{
+				opacity:0;
+			}
+			.important{
+				color: #ffffff;
+				display: block;
+				white-space: nowrap;
+				/* margin:50px -200px -20px 0px; */
+				margin-top:60px;
+				margin-bottom:20px;
+				font-size: 16px;
+				font-weight: 500;
+				text-align: center;
+				/* transform: translate(-95px,0px); */
+				font-style: italic;
+			}
+
+			.button{
+				appearance: none;
+				background-color: #FFFFFF;
+				border-radius: 40em;
+				border-style: none;
+				box-shadow: #ADCFFF 0 -12px 6px inset;
+				box-sizing: border-box;
+				color: #000000;
+				cursor: pointer;
+				display: inline-block;
+				font-family: -apple-system,sans-serif;
+				font-size: 1.2rem;
+				font-weight: 700;
+				letter-spacing: -.24px;
+				margin: 0;
+				outline: none;
+				padding: 1rem 1.3rem;
+				quotes: auto;
+				text-align: center;
+				text-decoration: none;
+				transition: all .15s;
+				user-select: none;
+				-webkit-user-select: none;
+				touch-action: manipulation;
+			}
+
+			.button:hover {
+				background-color: #FFC229;
+				box-shadow: #FF6314 0 -6px 8px inset;
+				transform: scale(1.125);
+			}
+
+			 .button:active {
+				transform: scale(1.025);
+			 }
+			 .center{
+				text-align:center;
+				margin-top:20px;
+			}
+			/* @media (min-width: 768px) {
+				.button{
+					font-size: 1.5rem;
+					padding: .75rem 2rem;
+				} */
+			}
+			.space1{
+				margin-left:30px;
+			}
+			.wording_title{
+					color: #ffffff;
+					display: block;
+					white-space: nowrap;
+					margin:30px 0px 30px 190px;
+					font-size: 16px;
+					font-weight: 500;
+					/* transform: translate(0px,40px); */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header">
+			<h1 class="header__content-text">
+				<div class="title_box"><span>GREEN EARTH CLINIC</span></div>
+					<div class="tabs">
+						<a class="txt" href="/">LOGOUT</a>
+				</div>
+			</h1>
+		</div>
+		<div class=spacing></div>
+
+		<p class="title">ACCOUNT HAS BEEN SUCCESSFULLY RESET !</p>
+		<div class="outerbox">
+			<div class="wording_title">IC<span class="hidden">hiddenhidden</span>:<span class="wording_textbox">{{IC}}</span></div>
+      <div class="wording_title">Public Key<span class="hidden">hidd </span>:<span class="wording_textbox">{{hashpub}}</span></div>
+      <div class="wording_title">Private Key<span class="hidden">hidd</span>:<span class="wording_textbox">{{hashprv}}</span></div>
+		</div>
+
+		<form action="/menu/">
+			{% csrf_token %}
+			<div class="center"><input type="submit" value="RETURN HOMEPAGE" class="button"></input></div>
+			<input type="hidden" name="username" value={{username}}><br>
+			<input type="hidden" name="userpass" value={{userpass}}><br>
+		</form>
+	</body>
+</html>

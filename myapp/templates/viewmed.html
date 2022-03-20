@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<style>
+			body, html {
+				  height: 100%;
+					max-width:100%;
+					margin:0;
+					overflow-x:hidden;
+					background-color:#090c1b;
+					font-family: "Kanit"!important;
+				}
+      .title_box{
+        position:absolute;
+				font-family:Copperplate, fantasy;
+				font-weight:bold;
+				font-size:xx-large;
+				color:#ffa200;
+				border:5px solid #ffa200;
+				width:22%;
+        top:20px;
+        left:50px;
+		  }
+      span{
+        padding:20px;
+        margin-top: 30px;
+        padding-bottom: 10px;
+      }
+			.tabs{
+				text-align:right;
+				margin-right:50px;
+			}
+      .txt{
+        position: relative;
+				padding:10px;
+				text-decoration:none;
+				font-family: Copperplate, fantasy;
+				font-size:30px;
+        font-weight:700;
+				color:#ffa409;
+        left:1200px;
+			}
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 88px;
+        z-index: 10;
+        -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+        -moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+        background: #090c1b;
+        display:flex;
+        width:100vw;
+        box-sizing:border-box;
+        flex-direction: row;
+        flex-nowrap:nowrap;
+      }
+      .header__content-text {
+        text-align: center;
+        padding: 15px 20px;
+      }
+      .spacing{
+        margin-top:10%;
+      }
+			.outerbox{
+				box-shadow: rgb(100 100 100 / 45%) 0px 0px 12px 6px;
+				padding:5px 20px 5px 20px;
+				border:1px solid black;
+				border-radius:1.25rem;
+				margin: 20px 200px 80px 200px;
+				background-color: #fed507;
+			}
+			.wordings{
+				color:black;
+				font-family: Copperplate, fantasy;
+				font-size:28px;
+				margin-left:100px;
+			}
+			.title1{
+				color:white;
+				font-family: Copperplate, fantasy;
+				/* font-size:28px; */
+				/* margin-left:150px; */
+				text-transform: uppercase;
+			}
+			.title01{
+				text-align: center;
+				font-size:40px;
+			}
+			.title02{
+				font-size:25px;
+				margin-left:220px;
+				text-shadow: 6px 4px 20px #fed507;
+			}
+			.hidden{
+				opacity:0;
+			}
+		</style>
+	</head>
+	<body>
+    <div class="header">
+      <h1 class="header__content-text">
+        <div class="title_box"><span>GREEN EARTH CLINIC</span></div>
+    		  <div class="tabs">
+    				<a class="txt" href="/">LOGOUT</a>
+    		</div>
+      </h1>
+    </div>
+    <div class=spacing></div>
+    <p class="title1 title01">Medical Data of {{patientname}}</p>
+
+		{% for i in info %}
+      <p class="title1 title02">Visit : #{{i.7}}</p>
+
+			<div class="outerbox">
+
+					<p class="wordings">Date<span class="hidden">hiddenhidd</span>:<span class="hidden">h</span>{{i.0}} </p>
+					<p class="wordings">Time<span class="hidden">hiddenhidl </span>:<span class="hidden">h</span>{{i.1}} </p>
+					<p class="wordings">Doctor<span class="hidden">hiddenhil</span>:<span class="hidden">h</span>{{i.3}} </p>
+					<p class="wordings">Illness<span class="hidden">hiddenhi  </span>:<span class="hidden">h</span>{{i.2}} </p>
+					<p class="wordings">Prescription<span class="hidden">hid  </span>:<span class="hidden">h</span>{{i.4}} </p>
+					<div class="vr"></div>
+					<p class="wordings">Previous Hash<span class="hidden">hl</span>:<span class="hidden">h</span>{{i.5}}</p>
+					<p class="wordings">Current Hash<span class="hidden">hid</span>:<span class="hidden">h</span>{{i.6}}</p>
+				</div>
+
+
+		{% endfor %}
+
+		<form action="/menu/">
+			<input type="hidden" name="username" value={{username}}><br>
+			<input type="hidden" name="userpass" value={{userpass}}><br>
+			<input type="button" value="Back" onclick="history.back()"></input>
+			<input type="submit" value="HOME"></input>
+		</form>
+  </body>
+</html>

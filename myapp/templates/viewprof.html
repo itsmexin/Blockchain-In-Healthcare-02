@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<style>
+			body, html {
+				  height: 100%;
+					max-width:100%;
+					margin:0;
+					overflow-x:hidden;
+					background-color:#090c1b;
+					font-family: "Kanit"!important;
+				}
+      .title_box{
+        position:absolute;
+				font-family:Copperplate, fantasy;
+				font-weight:bold;
+				font-size:xx-large;
+				color:#ffa200;
+				border:5px solid #ffa200;
+				width:22%;
+        top:20px;
+        left:50px;
+		  }
+      span{
+        padding:20px;
+        margin-top: 30px;
+        padding-bottom: 10px;
+      }
+			.tabs{
+				text-align:right;
+				margin-right:50px;
+			}
+      .txt{
+        position: relative;
+				padding:10px;
+				text-decoration:none;
+				font-family: Copperplate, fantasy;
+				font-size:30px;
+        font-weight:700;
+				color:#ffa409;
+        left:1200px;
+			}
+			.outerbox{
+				box-shadow: rgb(100 100 100 / 45%) 0px 0px 12px 6px;
+				padding:5px 20px 5px 20px;
+				border:1px solid black;
+				border-radius:1.25rem;
+				margin: 10px 200px 0px 200px;
+        background-color: #fed507;
+			}
+
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 88px;
+        z-index: 10;
+        -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+        -moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+        background: #090c1b;
+        display:flex;
+        width:100vw;
+        box-sizing:border-box;
+        flex-direction: row;
+        flex-nowrap:nowrap;
+      }
+      .header__content-text {
+        text-align: center;
+        padding: 15px 20px;
+      }
+			/* .box-3 {
+        background-color: #090c1b;
+        height: 33.33%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+			}
+      .space{
+        margin-top: 5%;
+      } */
+			.title{
+				margin-top: 10%;
+				color:#ffa200;
+				font-size:30px;
+				font-weight:700;
+				text-align:center;
+				letter-spacing: 1px;
+			}
+			.wordings{
+				color:black;
+				font-family: Copperplate, fantasy;
+				font-size:25px;
+				margin : 50px;
+				/* margin-left:150px; */
+			}
+			.wording1{
+				color:black;
+				font-family: Copperplate, fantasy;
+				font-size:25px;
+				margin:50px;
+				transform:translate(650px,-455px);
+				/* margin-left:150px; */
+			}
+			.hidden{
+				opacity:0;
+			}
+			.textbox{
+					display: block;
+					height: 50px;
+					width: 30%;
+					background-color: rgba(255,255,255,0.07);
+					border-radius: 3px;
+					padding: 0 10px;
+					margin-top: 8px;
+					margin-left:100px;
+					font-size: 14px;
+					font-weight: 300;
+					font-family: 'Poppins',sans-serif;
+					/* color: #ffffff; */
+					letter-spacing: 0.5px;
+					outline: none;
+					border: none;
+			}
+
+
+			.btn {
+				transform:translate(250px,-320px);
+			  box-sizing: border-box;
+			  -webkit-appearance: none;
+			     -moz-appearance: none;
+			          appearance: none;
+			  background-color: transparent;
+			  border: 2px solid #FFC229;
+			  border-radius: 0.6em;
+			  color: #FFC229;
+			  cursor: pointer;
+			  display: -webkit-box;
+			  display: -webkit-flex;
+			  display: -ms-flexbox;
+			  display: flex;
+			  -webkit-align-self: center;
+			      -ms-flex-item-align: center;
+			          align-self: center;
+			  font-size: 1rem;
+			  font-weight: 400;
+			  line-height: 1;
+			  margin: 20px;
+			  padding: 1.2em 2.8em;
+			  text-decoration: none;
+			  text-align: center;
+			  text-transform: uppercase;
+			  font-family: 'Montserrat', sans-serif;
+			  font-weight: 700;
+			}
+			.btn:hover, .btn:focus {
+			  color: #fff;
+			  outline: 0;
+			}
+			.btn1 {
+				transform:translate(800px,-400px);
+				box-sizing: border-box;
+				-webkit-appearance: none;
+					 -moz-appearance: none;
+								appearance: none;
+				background-color: transparent;
+				border: 2px solid #e74c3c;
+				border-radius: 0.6em;
+				color: #e74c3c;
+				cursor: pointer;
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-align-self: center;
+						-ms-flex-item-align: center;
+								align-self: center;
+				font-size: 1rem;
+				font-weight: 400;
+				line-height: 1;
+				margin: 20px;
+				padding: 1.2em 2.8em;
+				text-decoration: none;
+				text-align: center;
+				text-transform: uppercase;
+				font-family: 'Montserrat', sans-serif;
+				font-weight: 700;
+			}
+			.btn1:hover, .btn:focus {
+				color: #fff;
+				outline: 0;
+			}
+			.fifth {
+			  border-color: #FFC229;
+			  border-radius: 0;
+			  color: #FFC229;
+			  position: relative;
+			  overflow: hidden;
+			  z-index: 1;
+			  -webkit-transition: color 150ms ease-in-out;
+			  transition: color 150ms ease-in-out;
+			}
+			.fifth:after {
+			  content: '';
+			  position: absolute;
+			  display: block;
+			  top: 0;
+			  left: 50%;
+			  -webkit-transform: translateX(-50%);
+			          transform: translateX(-50%);
+			  width: 0;
+			  height: 100%;
+			  background: #8e44ad;
+			  z-index: -1;
+			  -webkit-transition: width 150ms ease-in-out;
+			  transition: width 150ms ease-in-out;
+			}
+			.fifth:hover {
+			  color: #fff;
+			}
+			.fifth:hover:after {
+			  width: 110%;
+			}
+			.spacing{
+				margin-top:10%;
+			}
+			.vl {
+			  border-left: 2px solid black;
+			  height: 400px;
+				margin-top:-950px;
+				margin-left:-25px;
+				/* display:inline-flex; */
+			  position: relative;
+			  left: 50%;
+			  /* margin-left: -3px; */
+			  top: 0;
+			}
+		</style>
+	</head>
+	<body>
+    <div class="header">
+      <h1 class="header__content-text">
+        <div class="title_box"><span>GREEN EARTH CLINIC</span></div>
+    		  <div class="tabs">
+    				<a class="txt" href="/">LOGOUT</a>
+    		</div>
+      </h1>
+    </div>
+		<div class=spacing></div>
+		<!-- display first block (patient personal info) -->
+		<p class="title">PERSONAL INFORMATION</p>
+		<div class="outerbox">
+
+			<p class="wordings">Date<span class="hidden">hidd</span>:<span class="hidden">h</span>{{date}}</p>
+			<p class="wordings">Time<span class="hidden">hidd</span>:<span class="hidden">h</span>{{time}}</p>
+			<p class="wordings">IC<span class="hidden">hidden</span>:<span class="hidden">h</span>{{IC}}</p>
+			<p class="wordings">Patient<span class="hidden">h </span>:<span class="hidden">h</span>{{patient}}</p>
+			<p class="wordings">Age<span class="hidden">hidd </span>:<span class="hidden">h</span>{{age}}</p>
+		</div>
+		<p class="wording1">Previous Hash : </p>
+		<p class="wording1">{{previoushash}}</p>
+		<p class="wording1">Current Hash : </p>
+		<p class="wording1">{{currenthash}}</p>
+
+		<form action="viewmed/">
+			<input class="btn fifth" type="button" value="Back" onclick="history.back()"></input>
+			<input class="btn1 fifth" type=submit value="VIEW MEDICAL DATA"></input>
+			<input type="hidden" name="IC" value={{IC}}>
+			<input type="hidden" name="prvkey" value={{prvkey}}>
+			<input type="hidden" name="username" value={{username}}>
+			<input type="hidden" name="userpass" value={{userpass}}>
+		</form>
+		<div class="vl"></div>
+  </body>
+</html>

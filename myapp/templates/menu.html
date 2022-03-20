@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body, html {
+					height: 100%;
+					max-width:100%;
+					margin:0;
+					overflow-x:hidden;
+					background-color:#090c1b;
+					font-family: "Kanit"!important;
+				}
+			.title_box{
+				position:absolute;
+				font-family:Copperplate, fantasy;
+				font-weight:bold;
+				font-size:xx-large;
+				color:#ffa200;
+				border:5px solid #ffa200;
+				width:22%;
+				top:20px;
+				left:50px;
+			}
+			/* span{
+				padding:20px;
+				margin-top: 30px;
+				padding-bottom: 10px;
+			} */
+			.header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 88px;
+        z-index: 10;
+        -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+        -moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+        background: #090c1b;
+        display:flex;
+        width:100vw;
+        box-sizing:border-box;
+        flex-direction: row;
+        flex-nowrap:nowrap;
+      }
+      .header__content-text {
+        text-align: center;
+        padding: 15px 20px;
+      }
+			.tabs{
+				text-align:right;
+				margin-right:50px;
+			}
+			.txt{
+				position: relative;
+				padding:10px;
+				text-decoration:none;
+				font-family: Copperplate, fantasy;
+				font-size:30px;
+				font-weight:700;
+				color:#ffa409;
+				left:1200px;
+			}
+
+			.box_row{
+				width:100%;
+				display:flex;
+				justify-content: center;
+				align-items:center;
+				margin-top:1%;
+			}
+			.content_box{
+				box-shadow: rgba(0, 0, 0, 1) 0px 5px 15px;
+				padding:10px 20px 10px 20px;
+				border:1px solid black;
+				border-radius:30px;
+				margin: 100px 10px 100px 10px;
+				width:25%;
+				height:300px;
+			}
+			.content_title{
+				color:#d2d1e6;
+				font-family: Copperplate, fantasy;
+				font-size:xx-large;
+				text-align:center;
+			}
+			.content_word{
+				color:#d2d1e6;
+				font-size:x-large;
+			}
+
+			.wrap {
+				height: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-top:-25%;
+			}
+
+			.button {
+				min-width: 300px;
+				min-height: 60px;
+				font-family: 'Nunito', sans-serif;
+				font-size: 22px;
+				text-transform: uppercase;
+				letter-spacing: 1.3px;
+				font-weight: 700;
+				color: #313133;
+				background: #4FD1C5;
+			background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+				border: none;
+				border-radius: 1000px;
+				/* box-shadow: 12px 12px 24px rgba(79,209,197,.64); */
+				transition: all 0.3s ease-in-out 0s;
+				cursor: pointer;
+				outline: none;
+				position: relative;
+				padding: 10px;
+				}
+
+			button::before {
+			content: '';
+				border-radius: 1000px;
+				min-width: calc(300px + 12px);
+				min-height: calc(60px + 12px);
+				border: 6px solid #00FFCB;
+				box-shadow: 0 0 60px rgba(0,255,203,.64);
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				opacity: 0;
+				transition: all .3s ease-in-out 0s;
+			}
+
+			.button:hover, .button:focus {
+				color: #313133;
+				transform: translateY(-6px);
+			}
+
+			button:hover::before, button:focus::before {
+				opacity: 1;
+			}
+
+			button::after {
+				content: '';
+				width: 30px; height: 30px;
+				border-radius: 100%;
+				border: 6px solid #00FFCB;
+				position: absolute;
+				z-index: -1;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				animation: ring 1.5s infinite;
+			}
+
+			button:hover::after, button:focus::after {
+				animation: none;
+				display: none;
+			}
+
+			@keyframes ring {
+				0% {
+				width: 30px;
+				height: 30px;
+				opacity: 1;
+				}
+				100% {
+				width: 300px;
+				height: 300px;
+				opacity: 0;
+				}
+			}
+			.invi{opacity:0;}
+			.spacing{
+        margin-top:5%;
+      }
+		</style>
+	</head>
+	<body>
+		<div class="header">
+			<h1 class="header__content-text">
+				<div class="title_box"><span>GREEN EARTH CLINIC</span></div>
+					<div class="tabs">
+						<a class="txt" href="/">LOGOUT</a>
+				</div>
+			</h1>
+		</div>
+		<div class=spacing></div>
+
+		<div class="box_row">
+				<div class="content_box">
+					<p class="content_title">Register</p>
+					<p class="content_word">Register for new patient<span class="invi">made it longer</span></p>
+					<div class="wrap">
+						<form action="newblock/">
+							<input type="hidden" name="username" value={{username}}></input><br>
+							<input type="hidden" name="userpass" value={{userpass}}></input><br>
+							<button class="button" type="submit">Register</button>
+						</form>
+					</div>
+				</div>
+				<div class="content_box">
+					<p class="content_title">Update</p>
+					<p class="content_word">Insert new health data for existing patient</p>
+					<div class="wrap">
+						<form action="insertblock/">
+							<input type="hidden" name="username" value={{username}}></input><br>
+							<input type="hidden" name="userpass" value={{userpass}}></input><br>
+							<button class="button" type="submit">INSERT</button>
+						</form>
+					</div>
+				</div>
+				<div class="content_box">
+					<p class="content_title">Modify</p>
+					<p class="content_word">Modify the latest health data of the patient</p>
+					<div class="wrap">
+						<form action="updateblock/">
+							<input type="hidden" name="username" value={{username}}></input><br>
+							<input type="hidden" name="userpass" value={{userpass}}></input><br>
+							<button class="button" type="submit">MODIFY</button>
+						</form>
+					</div>
+				</div>
+			</div>
+
+		<div class="box_row">
+				<div class="content_box">
+					<p class="content_title">View</p>
+					<p class="content_word">Display health data of the patient</p>
+					<div class="wrap">
+						<form action="viewblock/">
+							<input type="hidden" name="username" value={{username}}></input><br>
+							<input type="hidden" name="userpass" value={{userpass}}></input><br>
+							<button class="button" type="submit">VIEW</button>
+						</form>
+					</div>
+				</div>
+				<div class="content_box">
+					<p class="content_title">Reset</p>
+					<p class="content_word">Reset the keys for the patient</p>
+					<div class="wrap">
+						<form action="reset/">
+							<input type="hidden" name="username" value={{username}}></input><br>
+							<input type="hidden" name="userpass" value={{userpass}}></input><br>
+							<button class="button" type="submit">RESET</button>
+						</form>
+					</div>
+				</div>
+		</div>
+
+		</form>
+	</body>
+</html>

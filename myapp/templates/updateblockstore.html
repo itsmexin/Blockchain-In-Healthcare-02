@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body, html {
+					height: 100%;
+					max-width:100%;
+					margin:0;
+					overflow-x:hidden;
+					background-color:#090c1b;
+					font-family: "Kanit"!important;
+				}
+				/* header */
+			.title_box{
+				position:absolute;
+				font-family:Copperplate, fantasy;
+				font-weight:bold;
+				font-size:xx-large;
+				color:#ffa200;
+				border:5px solid #ffa200;
+				width:22%;
+				top:20px;
+				left:50px;
+			}
+			.header {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 88px;
+				z-index: 10;
+				-webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+				-moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+				box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+				background: #090c1b;
+				display:flex;
+				width:100vw;
+				box-sizing:border-box;
+				flex-direction: row;
+				flex-nowrap:nowrap;
+			}
+			.header__content-text {
+				text-align: center;
+				padding: 15px 20px;
+			}
+			.tabs{
+				text-align:right;
+				margin-right:50px;
+			}
+			.txt{
+				position: relative;
+				padding:10px;
+				text-decoration:none;
+				font-family: Copperplate, fantasy;
+				font-size:30px;
+				font-weight:700;
+				color:#ffa409;
+				left:1200px;
+			}
+			.spacing{
+				margin-top:10%;
+			}
+
+			.outerbox{
+				box-shadow: rgb(100 100 100 / 45%) 0px 0px 12px 6px;
+				padding:5px 20px 5px 20px;
+				border-radius:1.25rem;
+				margin: 20px 300px 20px 300px;
+				background-color: rgba(255,255,255,0.13);
+				border: 2px solid rgba(255,255,255,0.1);
+
+			}
+			.title{
+				color: #ffffff;
+				text-align: center;
+				font-size:30px;
+				font-weight:700;
+				letter-spacing: 1px;
+			}
+
+			.wording_textbox{
+					display: inline;
+					/* transform: translate(220px,0px); */
+					width: 300px;
+					height: 300px;
+					padding: 10px;
+					background-color: rgba(255,255,255,0.07);
+					/* background-size: 100px 0px; */
+					border-radius: 3px;
+					/* padding:  20px 10px; */
+					margin-top: 30px;
+					margin-left:100px;
+					font-size: 14px;
+					font-weight: 300;
+					font-family: 'Poppins',sans-serif;
+					color: #ffffff;
+					letter-spacing: 0.5px;
+					outline: none;
+					border: none;
+					text-align:center;
+
+			}
+			.hidden{
+				opacity:0;
+			}
+			.button{
+				appearance: none;
+				background-color: #FFFFFF;
+				border-radius: 40em;
+				border-style: none;
+				box-shadow: #ADCFFF 0 -12px 6px inset;
+				box-sizing: border-box;
+				color: #000000;
+				cursor: pointer;
+				display: inline-block;
+				font-family: -apple-system,sans-serif;
+				font-size: 1.2rem;
+				font-weight: 700;
+				letter-spacing: -.24px;
+				margin: 0;
+				outline: none;
+				padding: 1rem 1.3rem;
+				quotes: auto;
+				text-align: center;
+				text-decoration: none;
+				transition: all .15s;
+				user-select: none;
+				-webkit-user-select: none;
+				touch-action: manipulation;
+			}
+
+			.button:hover {
+				background-color: #FFC229;
+				box-shadow: #FF6314 0 -6px 8px inset;
+				transform: scale(1.125);
+			}
+
+			 .button:active {
+				transform: scale(1.025);
+			 }
+			 .center{
+				text-align:center;
+				margin-top:20px;
+			}
+			.wording{
+				color: #ffffff;
+				display: block;
+				white-space: nowrap;
+				margin:30px 0px 30px 150px;
+				font-size: 20px;
+				font-weight: 500;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header">
+			<h1 class="header__content-text">
+				<div class="title_box"><span>GREEN EARTH CLINIC</span></div>
+					<div class="tabs">
+						<a class="txt" href="/">LOGOUT</a>
+				</div>
+			</h1>
+		</div>
+		<div class=spacing></div>
+
+ 		<p class="title">INFORMATION HAS SUCCESSFULLY MODIFIED!</p>
+
+		<div class="outerbox">
+			<div class="wording">IC<span class="hidden">hiddenhiddenhiddenhi</span>:<span class="wording_textbox">{{IC}}</span></div>
+			<div class="wording">Illness<span class="hidden">hiddenhiddenhidd</span>:<span class="wording_textbox">{{illness}}</span></div>
+			<div class="wording">Doctor<span class="hidden">hiddenhiddenhid </span>:<span class="wording_textbox">{{doctor}}</span></div>
+			<div class="wording">Prescription<span class="hidden">hiddenhidde</span>:<span class="wording_textbox">{{prescription}}</span></div>
+		</div>
+  	<!-- <p>IC : {{IC}}</p><br>
+		<p>Illness : {{illness}}</p><br>
+		<p>Doctor : {{doctor}}</p><br>
+		<p>Prescription : {{prescription}}</p><br> -->
+		<!-- <input type="button" value="HOME" onclick="window.location.href='https://projectwithdb.herokuapp.com/loggedinmenu/'"></input> -->
+		<form action="/menu/">
+			<div class="center"><input type="submit" value="RETURN HOMEPAGE" class="button"></input></div>
+			<!-- <input type="submit" value="HOME"></input> -->
+			<input type="hidden" name="username" value={{username}}><br>
+			<input type="hidden" name="userpass" value={{userpass}}><br>
+		</form>
+	</body>
+</html>
